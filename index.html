@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neel Bose – Resume</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 13px;
+      background: #d0d0d0;
+      display: flex;
+      justify-content: center;
+      padding: 30px 10px;
+    }
+
+    /* ── Page Shell ── */
+    .page {
+      background: #fff;
+      width: 794px;
+      padding: 28px 32px 32px;
+      border: 1px solid #aaa;
+      box-shadow: 0 4px 18px rgba(0,0,0,.18);
+    }
+
+    /* ══════════════════════════════════
+       HEADER
+    ══════════════════════════════════ */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border: 2px solid #000;
+      padding: 14px 16px 10px;
+      margin-bottom: 12px;
+    }
+
+    .header-left h1 {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-family: Arial Black, Arial, sans-serif;
+      line-height: 1;
+    }
+
+    .header-left .tagline {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin-top: 4px;
+      color: #000;
+    }
+
+    .header-right {
+      font-family: Arial, sans-serif;
+      font-size: 11.5px;
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    .header-right a { color: #000; text-decoration: underline; }
+
+    /* ══════════════════════════════════
+       ABOUT ME – full-width band
+    ══════════════════════════════════ */
+    .about-section {
+      border: 1px solid #000;
+      padding: 8px 12px 10px;
+      margin-bottom: 12px;
+    }
+
+    .about-section .section-title {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: underline;
+      margin-bottom: 5px;
+    }
+
+    .about-section p {
+      font-size: 12.5px;
+      text-align: justify;
+      line-height: 1.55;
+    }
+
+    /* ══════════════════════════════════
+       TWO-COLUMN BODY
+    ══════════════════════════════════ */
+    .body-columns {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
+      border: 1px solid #000;
+    }
+
+    /* LEFT COLUMN */
+    .left-col {
+      border-right: 1px solid #000;
+      padding: 10px 10px 12px;
+    }
+
+    .left-col .section { margin-bottom: 12px; }
+    .left-col .section:last-child { margin-bottom: 0; }
+
+    .left-col .section-title {
+      font-family: Arial, sans-serif;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-decoration: underline;
+      margin-bottom: 4px;
+    }
+
+    .left-col ul {
+      list-style: disc;
+      padding-left: 14px;
+      font-size: 11.5px;
+      line-height: 1.65;
+    }
+
+    /* two-column grid for frameworks */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 4px;
+      font-size: 11.5px;
+      line-height: 1.65;
+      list-style: disc;
+      padding-left: 14px;
+    }
+
+    .edu-entry { margin-bottom: 8px; font-size: 11.5px; line-height: 1.5; }
+    .edu-entry:last-child { margin-bottom: 0; }
+
+    /* RIGHT COLUMN */
+    .right-col {
+      padding: 10px 12px 12px;
+    }
+
+    .right-col .section-title {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: underline;
+      margin-bottom: 8px;
+    }
+
+    .project { margin-bottom: 14px; }
+    .project:last-child { margin-bottom: 0; }
+
+    .project-title {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+
+    .project ul {
+      list-style: disc;
+      padding-left: 18px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .project ul li { margin-bottom: 3px; }
+    .project ul li a { color: #000; text-decoration: underline; }
+
+    /* ── Visitor Counter ── */
+    .visitor-counter {
+      margin-top: 14px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 11.5px;
+      color: #333;
+      padding-top: 8px;
+      border-top: 1px solid #ccc;
+    }
+
+    #counter-value {
+      font-weight: 700;
+      font-size: 13px;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>NEEL BOSE</h1>
+      <div class="tagline">A I &nbsp; E N G I N E E R &nbsp;|&nbsp; C L O U D &nbsp;&amp;&nbsp; W E B &nbsp; D E V E L O P E R</div>
+    </div>
+    <div class="header-right">
+      neelbosen.jr11@gmail.com &nbsp;|&nbsp; +91 8697589964<br>
+      GitHub: <a href="https://github.com/Nj-1111" target="_blank">github.com/Nj-1111</a><br>
+      Hugging Face: <a href="https://huggingface.co/Nj-1111" target="_blank">huggingface.co/Nj-1111</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/neel-bose-545bb921a/" target="_blank">linkedin.com/in/neel-bose-545bb921a</a>
+    </div>
+  </div>
+
+  <!-- ABOUT ME -->
+  <div class="about-section">
+    <div class="section-title">ABOUT ME</div>
+    <p>
+      Pre-Final Year Engineering student passionate about building practical AI systems, scalable cloud
+      applications, and intelligent software that solves real-world problems. Hands-on experience developing
+      healthcare AI pipelines, transformer models, tokenizer systems, and embedded monitoring solutions
+      using Python, PyTorch, FastAPI, and cloud deployment tools. Interested in machine learning
+      engineering, backend systems, and product-focused development with a strong focus on learning by
+      building.
+    </p>
+  </div>
+
+  <!-- TWO-COLUMN BODY -->
+  <div class="body-columns">
+
+    <!-- LEFT -->
+    <div class="left-col">
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-title">SKILLS</div>
+        <ul>
+          <li>AI / Machine Learning</li>
+          <li>Domain specific SLM training &amp; Integration</li>
+          <li>Chatbots Integration And Evaluation with RAGs</li>
+          <li>CNN &amp; Transformer Architectures.</li>
+          <li>Image and Data Processing</li>
+          <li>Model Training &amp; Inference</li>
+        </ul>
+      </div>
+
+      <!-- FRAMEWORKS & LIBRARIES -->
+      <div class="section">
+        <div class="section-title">FRAMEWORKRS &amp; LIBRARIES</div>
+        <ul class="grid-2">
+          <li>PyTorch</li>
+          <li>Linux</li>
+          <li>Numpy</li>
+          <li>Docker</li>
+          <li>Pandas</li>
+          <li>Amazon Web Services(AWS)- EC2,S3,Lambda, RDS,IAM,CloudWatch.</li>
+          <li>FastAPI</li>
+          <li></li>
+          <li>Matplot-lib</li>
+          <li>Networking</li>
+          <li>OpenCV</li>
+          <li></li>
+          <li>SQL,NoSQL</li>
+          <li></li>
+        </ul>
+      </div>
+
+      <!-- SOFT SKILLS -->
+      <div class="section">
+        <div class="section-title">SOFT SKILLS</div>
+        <ul>
+          <li>Problem Solving</li>
+          <li>Team Collaboration</li>
+          <li>Debugging &amp; Troubleshooting</li>
+          <li>Time Management</li>
+        </ul>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title">EDUCATION</div>
+        <div class="edu-entry">
+          B.Tech in Eelctronic and Communication Engineering.<br>
+          RCC Institute of Information Technology — Kolkata, West Bengal [2023 – 2027]
+        </div>
+        <div class="edu-entry">
+          Higher Secondary Education (Class XII). Shikshaniketan School — CBSE [2023].
+        </div>
+        <div class="edu-entry">
+          Secondary Education (Class X). Sri Aurobindo Institute Of Education — ICSE [2021].
+        </div>
+      </div>
+
+    </div><!-- /left-col -->
+
+    <!-- RIGHT -->
+    <div class="right-col">
+      <div class="section-title">PROJECT EXPERIENCE</div>
+
+      <!-- Project 1 -->
+      <div class="project">
+        <div class="project-title">Copernicus Byte Level Byte Pair EncodeTokenizer | Python</div>
+        <ul>
+          <li>Built and trained a 56K-vocabulary domain-general BPE tokenizer from scratch on 3.96M documents spanning natural language, code, mathematics, and scientific text. Engineered a crash-resilient 4-stage training pipeline on Kaggle with custom pure-Python BPE implementation, checkpoint recovery, and large-scale dataset preprocessing; published on Hugging Face</li>
+          <li>Repository : <a href="https://huggingface.co/Nj-1111/Copernicus-Tokenizer" target="_blank">Nj-1111/Copernicus-Tokenizer</a></li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project">
+        <div class="project-title">EyeeSEE – Glaucoma Clinical Decision Support System | PyTorch, U-Net</div>
+        <ul>
+          <li>End-to-end glaucoma screening pipeline using U-Net segmentation with Monte Carlo Dropout uncertainty estimation and deterministic clinical metric extraction (vCDR, ISNT rule) from retinal fundus images.</li>
+          <li>Repository: <a href="https://github.com/Nj-1111/EyeeSEE" target="_blank">Nj-1111/EyeeSEE</a></li>
+          <li>Dataset: <a href="https://huggingface.co/datasets/Nj-1111/Glaucoma_Dataset" target="_blank">Nj-1111/Glaucoma_Dataset</a></li>
+          <li>Demo: <a href="https://huggingface.co/spaces/Nj-1111/EyeeSEE" target="_blank">Nj-1111/EyeeSEE (Spaces)</a></li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project">
+        <div class="project-title">GPT-152M — Decoder-Only Transformer Trained from Scratch | PyTorch, Transformers, NLP</div>
+        <ul>
+          <li>Built and trained a 152M-parameter GPT-style transformer Language Model from scratch in raw PyTorch on the FineWebEdu corpus, implementing RoPE, SwiGLU, weight tying, and gradient checkpointing. Designed a full mixed-precision training pipeline on Kaggle Tesla T4 GPUs using AdamW, cosine LR scheduling, and gradient accumulation, training on 197M tokens over 6,000 optimization steps.</li>
+          <li>Repository: <a href="https://github.com/Nj-1111/gpt-152m-fineweb" target="_blank">Nj-1111/gpt-152m-fineweb</a></li>
+          <li>Demo: <a href="https://huggingface.co/spaces/Nj-1111/gpt-152m-demo" target="_blank">Nj-1111/gpt-152m-demo (Spaces)</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /right-col -->
+  </div><!-- /body-columns -->
+
+  <!-- VISITOR COUNTER -->
+  <div class="visitor-counter">
+    👁 Visitors: <span id="counter-value">...</span>
+  </div>
+
+</div><!-- /page -->
+
+<script>
+  // Replace the URL below with your actual API Gateway endpoint after deployment
+  const API_URL = "https://YOUR_API_GATEWAY_URL/count";
+
+  async function updateCounter() {
+    try {
+      const response = await fetch(API_URL, { method: "POST" });
+      const data = await response.json();
+      document.getElementById("counter-value").textContent = data.count;
+    } catch (err) {
+      document.getElementById("counter-value").textContent = "—";
+    }
+  }
+
+  updateCounter();
+</script>
+
+</body>
+</html>
