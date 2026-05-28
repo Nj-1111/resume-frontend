@@ -5,208 +5,257 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neel Bose – Resume</title>
   <style>
-    /* ── Reset & Base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─────────────────────────────────────────
+       GLOBAL RESET & PAGE
+    ───────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 13px;
-      background: #d0d0d0;
+      background: #c8c8c8;
       display: flex;
       justify-content: center;
-      padding: 30px 10px;
+      align-items: flex-start;
+      padding: 32px 16px 48px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 13.5px;
+      color: #000;
     }
 
-    /* ── Page Shell ── */
+    /* The white A4-ish page */
     .page {
       background: #fff;
-      width: 794px;
-      padding: 28px 32px 32px;
-      border: 1px solid #aaa;
-      box-shadow: 0 4px 18px rgba(0,0,0,.18);
+      width: 760px;
+      padding: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
     }
 
-    /* ══════════════════════════════════
-       HEADER
-    ══════════════════════════════════ */
+
+    /* ─────────────────────────────────────────
+       1. HEADER  (name + tagline | contact)
+    ───────────────────────────────────────── */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      border: 2px solid #000;
-      padding: 14px 16px 10px;
-      margin-bottom: 12px;
+      border: 1.5px solid #000;
+      padding: 12px 14px 10px 14px;
+      margin: 10px 10px 0 10px;   /* outer margin matches screenshot */
     }
 
     .header-left h1 {
-      font-size: 32px;
+      font-family: Arial Black, "Arial Bold", Arial, sans-serif;
+      font-size: 30px;
       font-weight: 900;
-      letter-spacing: 2px;
-      font-family: Arial Black, Arial, sans-serif;
+      letter-spacing: 1.5px;
       line-height: 1;
     }
 
+    /* "AI ENGINEER | CLOUD & WEB DEVELOPER"
+       Must stay on ONE line — use smaller tracking */
     .header-left .tagline {
       font-family: Arial, sans-serif;
-      font-size: 11px;
+      font-size: 9.5px;
       font-weight: 700;
-      letter-spacing: 4px;
-      margin-top: 4px;
-      color: #000;
+      letter-spacing: 3.5px;
+      margin-top: 5px;
+      white-space: nowrap;
     }
 
     .header-right {
       font-family: Arial, sans-serif;
-      font-size: 11.5px;
+      font-size: 11px;
       text-align: right;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    .header-right a { color: #000; text-decoration: underline; }
+    .header-right a {
+      color: #000;
+      text-decoration: underline;
+    }
 
-    /* ══════════════════════════════════
-       ABOUT ME – full-width band
-    ══════════════════════════════════ */
-    .about-section {
-      border: 1px solid #000;
+
+    /* ─────────────────────────────────────────
+       2. ABOUT ME  (full-width box)
+    ───────────────────────────────────────── */
+    .about-wrap {
+      margin: 8px 10px 0 10px;
+      border: 1.5px solid #000;
       padding: 8px 12px 10px;
-      margin-bottom: 12px;
     }
 
-    .about-section .section-title {
+    .section-label {
       font-family: Arial, sans-serif;
-      font-size: 12px;
-      font-weight: 800;
+      font-size: 11.5px;
+      font-weight: 900;
       text-decoration: underline;
       margin-bottom: 5px;
     }
 
-    .about-section p {
+    .about-wrap p {
       font-size: 12.5px;
       text-align: justify;
       line-height: 1.55;
     }
 
-    /* ══════════════════════════════════
-       TWO-COLUMN BODY
-    ══════════════════════════════════ */
-    .body-columns {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 0;
-      border: 1px solid #000;
+
+    /* ─────────────────────────────────────────
+       3. BODY  (left col + right col)
+    ───────────────────────────────────────── */
+    .body-wrap {
+      margin: 8px 10px 10px 10px;
+      border: 1.5px solid #000;
+      display: flex;
+      align-items: stretch;
     }
 
     /* LEFT COLUMN */
-    .left-col {
-      border-right: 1px solid #000;
-      padding: 10px 10px 12px;
+    .left {
+      width: 210px;
+      flex-shrink: 0;
+      border-right: 1.5px solid #000;
+      padding: 10px 10px 14px 10px;
     }
 
-    .left-col .section { margin-bottom: 12px; }
-    .left-col .section:last-child { margin-bottom: 0; }
-
-    .left-col .section-title {
-      font-family: Arial, sans-serif;
-      font-size: 11.5px;
-      font-weight: 800;
-      text-decoration: underline;
-      margin-bottom: 4px;
+    .left .block {
+      margin-bottom: 11px;
+    }
+    .left .block:last-child {
+      margin-bottom: 0;
     }
 
-    .left-col ul {
-      list-style: disc;
-      padding-left: 14px;
-      font-size: 11.5px;
-      line-height: 1.65;
+    /* bullet lists in left col */
+    .left ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
-    /* two-column grid for frameworks */
-    .grid-2 {
+    .left ul li::before {
+      content: "• ";
+    }
+
+    /* Frameworks: two items per row with bullet separator
+       e.g.  • PyTorch   • Linux   */
+    .fw-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0 4px;
       font-size: 11.5px;
-      line-height: 1.65;
-      list-style: disc;
-      padding-left: 14px;
+      line-height: 1.75;
+      list-style: none;
+      padding: 0;
     }
 
-    .edu-entry { margin-bottom: 8px; font-size: 11.5px; line-height: 1.5; }
-    .edu-entry:last-child { margin-bottom: 0; }
+    .fw-grid li::before {
+      content: "• ";
+    }
+
+    /* AWS entry spans full width */
+    .fw-grid .full {
+      grid-column: 1 / -1;
+    }
+
+    /* Education entries */
+    .edu {
+      font-size: 11.5px;
+      line-height: 1.55;
+      margin-bottom: 7px;
+    }
+    .edu:last-child { margin-bottom: 0; }
+
 
     /* RIGHT COLUMN */
-    .right-col {
-      padding: 10px 12px 12px;
+    .right {
+      flex: 1;
+      padding: 10px 12px 14px 12px;
     }
 
-    .right-col .section-title {
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      text-decoration: underline;
-      margin-bottom: 8px;
+    /* project blocks */
+    .project {
+      margin-bottom: 12px;
     }
-
-    .project { margin-bottom: 14px; }
     .project:last-child { margin-bottom: 0; }
 
     .project-title {
       font-family: Arial, sans-serif;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 5px;
-      line-height: 1.4;
+      font-size: 12.5px;
+      font-weight: 900;
+      line-height: 1.45;
+      margin-bottom: 4px;
     }
 
     .project ul {
-      list-style: disc;
-      padding-left: 18px;
+      list-style: none;
+      padding: 0;
       font-size: 12px;
       line-height: 1.6;
     }
 
-    .project ul li { margin-bottom: 3px; }
-    .project ul li a { color: #000; text-decoration: underline; }
-
-    /* ── Visitor Counter ── */
-    .visitor-counter {
-      margin-top: 14px;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 11.5px;
-      color: #333;
-      padding-top: 8px;
-      border-top: 1px solid #ccc;
+    .project ul li {
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 3px;
     }
 
-    #counter-value {
+    .project ul li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+    }
+
+    .project ul li a {
+      color: #000;
+      text-decoration: underline;
+    }
+
+
+    /* ─────────────────────────────────────────
+       4. VISITOR COUNTER  (outside the page box)
+    ───────────────────────────────────────── */
+    .counter {
+      text-align: center;
+      padding: 6px 10px 8px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #444;
+      border-top: 1px solid #ddd;
+      margin: 0 10px 10px;
+    }
+
+    #visits {
       font-weight: 700;
-      font-size: 13px;
       color: #000;
     }
+
   </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HEADER -->
+  <!-- ══ HEADER ══════════════════════════════════ -->
   <div class="header">
     <div class="header-left">
       <h1>NEEL BOSE</h1>
-      <div class="tagline">A I &nbsp; E N G I N E E R &nbsp;|&nbsp; C L O U D &nbsp;&amp;&nbsp; W E B &nbsp; D E V E L O P E R</div>
+      <div class="tagline">A I &nbsp; E N G I N E E R &nbsp; | &nbsp; C L O U D &nbsp; &amp; &nbsp; W E B &nbsp; D E V E L O P E R</div>
     </div>
     <div class="header-right">
-      neelbosen.jr11@gmail.com &nbsp;|&nbsp; +91 8697589964<br>
-      GitHub: <a href="https://github.com/Nj-1111" target="_blank">github.com/Nj-1111</a><br>
-      Hugging Face: <a href="https://huggingface.co/Nj-1111" target="_blank">huggingface.co/Nj-1111</a><br>
-      LinkedIn: <a href="https://www.linkedin.com/in/neel-bose-545bb921a/" target="_blank">linkedin.com/in/neel-bose-545bb921a</a>
+      neelbosen.jr11@gmail.com &nbsp;<br>&nbsp; +91 8697589964<br>
+      GitHub: <a href="https://github.com/Nj-1111">github.com/Nj-1111</a><br>
+      Hugging Face: <a href="https://huggingface.co/Nj-1111">huggingface.co/Nj-1111</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/neel-bose-545bb921a/">linkedin.com/in/neel-bose-545bb921a</a>
     </div>
   </div>
 
-  <!-- ABOUT ME -->
-  <div class="about-section">
-    <div class="section-title">ABOUT ME</div>
+
+  <!-- ══ ABOUT ME ════════════════════════════════ -->
+  <div class="about-wrap">
+    <div class="section-label">ABOUT ME</div>
     <p>
       Pre-Final Year Engineering student passionate about building practical AI systems, scalable cloud
       applications, and intelligent software that solves real-world problems. Hands-on experience developing
@@ -217,15 +266,15 @@
     </p>
   </div>
 
-  <!-- TWO-COLUMN BODY -->
-  <div class="body-columns">
 
-    <!-- LEFT -->
-    <div class="left-col">
+  <!-- ══ BODY COLUMNS ════════════════════════════ -->
+  <div class="body-wrap">
 
-      <!-- SKILLS -->
-      <div class="section">
-        <div class="section-title">SKILLS</div>
+    <!-- LEFT ─────────────────────────────────── -->
+    <div class="left">
+
+      <div class="block">
+        <div class="section-label">SKILLS</div>
         <ul>
           <li>AI / Machine Learning</li>
           <li>Domain specific SLM training &amp; Integration</li>
@@ -236,30 +285,28 @@
         </ul>
       </div>
 
-      <!-- FRAMEWORKS & LIBRARIES -->
-      <div class="section">
-        <div class="section-title">FRAMEWORKRS &amp; LIBRARIES</div>
-        <ul class="grid-2">
+      <div class="block">
+        <div class="section-label">FRAMEWORKRS &amp; LIBRARIES</div>
+        <ul class="fw-grid">
           <li>PyTorch</li>
-          <li>Linux</li>
-          <li>Numpy</li>
-          <li>Docker</li>
+          <li>NumPy</li>         
           <li>Pandas</li>
+          <li>Matplot-lib</li>
+          <li>OpenCV</li>
+          <li>SQL,NoSQL</li>
+          <li>LangGraph</li>
+          <li>LangChain</li>
+          <li>Docker</li>
+          <li>Linux</li>
+          <li>Networking</li>
+          <li>DynamoDB</li>
           <li>Amazon Web Services(AWS)- EC2,S3,Lambda, RDS,IAM,CloudWatch.</li>
           <li>FastAPI</li>
-          <li></li>
-          <li>Matplot-lib</li>
-          <li>Networking</li>
-          <li>OpenCV</li>
-          <li></li>
-          <li>SQL,NoSQL</li>
-          <li></li>
         </ul>
       </div>
 
-      <!-- SOFT SKILLS -->
-      <div class="section">
-        <div class="section-title">SOFT SKILLS</div>
+      <div class="block">
+        <div class="section-label">SOFT SKILLS</div>
         <ul>
           <li>Problem Solving</li>
           <li>Team Collaboration</li>
@@ -268,28 +315,28 @@
         </ul>
       </div>
 
-      <!-- EDUCATION -->
-      <div class="section">
-        <div class="section-title">EDUCATION</div>
-        <div class="edu-entry">
-          B.Tech in Eelctronic and Communication Engineering.<br>
+      <div class="block">
+        <div class="section-label">EDUCATION</div>
+        <div class="edu">
+          B.Tech in Eelctronic and Communication Engineering.
           RCC Institute of Information Technology — Kolkata, West Bengal [2023 – 2027]
         </div>
-        <div class="edu-entry">
+        <div class="edu">
           Higher Secondary Education (Class XII). Shikshaniketan School — CBSE [2023].
         </div>
-        <div class="edu-entry">
+        <div class="edu">
           Secondary Education (Class X). Sri Aurobindo Institute Of Education — ICSE [2021].
         </div>
       </div>
 
-    </div><!-- /left-col -->
+    </div><!-- /left -->
 
-    <!-- RIGHT -->
-    <div class="right-col">
-      <div class="section-title">PROJECT EXPERIENCE</div>
 
-      <!-- Project 1 -->
+    <!-- RIGHT ────────────────────────────────── -->
+    <div class="right">
+
+      <div class="section-label">PROJECT EXPERIENCE</div>
+
       <div class="project">
         <div class="project-title">Copernicus Byte Level Byte Pair EncodeTokenizer | Python</div>
         <ul>
@@ -298,7 +345,6 @@
         </ul>
       </div>
 
-      <!-- Project 2 -->
       <div class="project">
         <div class="project-title">EyeeSEE – Glaucoma Clinical Decision Support System | PyTorch, U-Net</div>
         <ul>
@@ -309,7 +355,6 @@
         </ul>
       </div>
 
-      <!-- Project 3 -->
       <div class="project">
         <div class="project-title">GPT-152M — Decoder-Only Transformer Trained from Scratch | PyTorch, Transformers, NLP</div>
         <ul>
@@ -319,31 +364,36 @@
         </ul>
       </div>
 
-    </div><!-- /right-col -->
-  </div><!-- /body-columns -->
+    </div><!-- /right -->
+  </div><!-- /body-wrap -->
 
-  <!-- VISITOR COUNTER -->
-  <div class="visitor-counter">
-    👁 Visitors: <span id="counter-value">...</span>
+  <!-- ══ VISITOR COUNTER ══════════════════════════ -->
+  <div class="counter">
+    👁 Visitor count: <span id="visits">—</span>
   </div>
 
 </div><!-- /page -->
 
 <script>
-  // Replace the URL below with your actual API Gateway endpoint after deployment
-  const API_URL = "https://YOUR_API_GATEWAY_URL/count";
+  /*
+   * VISITOR COUNTER
+   * ───────────────
+   * After you deploy the backend (SAM), paste your API Gateway URL below.
+   * The script POSTs to your Lambda, which increments DynamoDB and returns { count: N }.
+   */
+  const API_URL = "https://YOUR_API_GATEWAY_URL/count";  // ← replace this
 
-  async function updateCounter() {
+  async function loadCount() {
     try {
-      const response = await fetch(API_URL, { method: "POST" });
-      const data = await response.json();
-      document.getElementById("counter-value").textContent = data.count;
-    } catch (err) {
-      document.getElementById("counter-value").textContent = "—";
+      const res  = await fetch(API_URL, { method: "POST" });
+      const data = await res.json();
+      document.getElementById("visits").textContent = data.count;
+    } catch {
+      document.getElementById("visits").textContent = "N/A";
     }
   }
 
-  updateCounter();
+  loadCount();
 </script>
 
 </body>
