@@ -1,398 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neel Bose – Resume</title>
-  <style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neel Bose &ndash; Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* Authored 1:1 in the source screenshot's pixel space (542px wide sheet),
+     then scaled up to fill a real A4 page. */
+  :root{
+    --fs: 10.45px;
+    --lh: 17px;
+    --rule: #9b9b9b;
+    --scale: 1.46495;   /* 794px (210mm @96dpi) / 542px */
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
-    /* ─────────────────────────────────────────
-       GLOBAL RESET & PAGE
-    ───────────────────────────────────────── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  body{
+    background:#e9ebef;
+    display:flex; justify-content:center;
+    padding:20px 0 40px;
+    font-family:Arial,"Liberation Sans",Helvetica,sans-serif;
+    font-size:var(--fs); line-height:var(--lh); color:#000;
+  }
 
-    body {
-      background: #c8c8c8;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 32px 16px 48px;
-      font-family: "Times New Roman", Times, serif;
-      font-size: 13.5px;
-      color: #000;
-    }
+  .page{
+    width:210mm; height:297mm;
+    background:#f8f8f8;
+    box-shadow:0 2px 14px rgba(0,0,0,.28);
+    overflow:hidden;
+  }
+  .sheet{
+    width:542px; height:766px;
+    transform:scale(var(--scale));
+    transform-origin:top left;
+  }
 
-    /* The white A4-ish page */
-    .page {
-      background: #fff;
-      width: 760px;
-      padding: 0;
-      box-shadow: 0 2px 12px rgba(0,0,0,.25);
-    }
+  .bar{height:7px;background:linear-gradient(90deg,#279bd3 0%,#4474d9 50%,#674ad6 100%);}
 
+  .sec{border-bottom:1px solid var(--rule); padding:0 4px 0 14px;}
+  .center{text-align:center;}
+  ul{list-style:none;}
+  li{position:relative;}
+  li::before{content:"\2022";position:absolute;left:0;}
+  h2{font-size:var(--fs);font-weight:700;line-height:var(--lh);margin-left:1px;}
+  a{color:inherit;}
+  a.plain{text-decoration:none;}
+  b{font-weight:700;}
 
-    /* ─────────────────────────────────────────
-       1. HEADER  (name + tagline | contact)
-    ───────────────────────────────────────── */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border: 1.5px solid #000;
-      padding: 12px 14px 10px 14px;
-      margin: 10px 10px 0 10px;   /* outer margin matches screenshot */
-    }
+  /* header */
+  .hdr{display:flex;justify-content:space-between;align-items:flex-start;padding-top:2px;height:45px;}
+  .hdr h1{font-family:Lato,Arial,sans-serif;font-size:22px;font-weight:700;line-height:21px;margin-left:4px;letter-spacing:1px;}
+  .tagline{font-family:Lato,Arial,sans-serif;font-size:12.6px;font-weight:400;line-height:14px;margin-top:4px;}
+  .contact{font-family:Lato,Arial,sans-serif;font-size:10.4px;line-height:13px;text-align:right;padding-top:0.5px;}
 
-    .header-left h1 {
-      font-family: Arial Black, "Arial Bold", Arial, sans-serif;
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      line-height: 1;
-    }
+  /* links + summary */
+  .links{font-size:9.6px;line-height:15px;padding:1.7px 0 0.8px 24px;}
+  .summary{line-height:16px;padding:4px 10.5px 4.5px 21.5px;}
 
-    /* "AI ENGINEER | CLOUD & WEB DEVELOPER"
-       Must stay on ONE line — use smaller tracking */
-    .header-left .tagline {
-      font-family: Arial, sans-serif;
-      font-size: 9.5px;
-      font-weight: 700;
-      letter-spacing: 3.5px;
-      margin-top: 5px;
-      white-space: nowrap;
-    }
+  /* certifications + skills */
+  .certs{padding-bottom:4px;}
+  .certs ul{margin-left:11px;}
+  .certs li{padding-left:12px;}
+  .certs .skills{margin-left:1px;margin-top:-4px;}
 
-    .header-right {
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      text-align: right;
-      line-height: 1.75;
-    }
+  /* work experience */
+  .work{padding-right:12px;}
+  .work .job{margin-left:8px;margin-top:-3px;}
+  .work .job .when{float:right;font-size:9.3px;}
+  .work .role{margin-left:8px;margin-top:2px;}
+  .work ul{margin-left:14px;margin-bottom:-1.5px;}
+  .work li{padding-left:12px;}
 
-    .header-right a {
-      color: #000;
-      text-decoration: underline;
-    }
+  /* projects */
+  .proj{padding-right:22px;line-height:17px;}
+  .proj .p{margin-top:1px;}
+  .proj .p:first-of-type{margin-top:4px;}
+  .proj .ptitle{font-weight:700;margin-left:21px;}
+  .proj ul{margin-left:32px;}
+  .proj li{padding-left:7px;}
+  .proj .meta{margin-left:30px;}
 
+  /* education + languages */
+  .edu{font-size:8.7px;line-height:14px;padding-right:12px;}
+  .edu h2{font-size:9.8px;line-height:15px;margin-left:11px;}
+  .edu ul{margin-left:17px;}
+  .edu li{padding-left:8px;}
+  .edu .lang{font-size:9.4px;line-height:16px;margin-left:11px;margin-top:0;}
 
-    /* ─────────────────────────────────────────
-       2. ABOUT ME  (full-width box)
-    ───────────────────────────────────────── */
-    .about-wrap {
-      margin: 8px 10px 0 10px;
-      border: 1.5px solid #000;
-      padding: 8px 12px 10px;
-    }
+  /* visitor counter (from resume-frontend/index.html) */
+  .counter{text-align:center;padding:3px 7px 4px;font-family:Arial,"Liberation Sans",Helvetica,sans-serif;font-size:11px;line-height:13px;color:#444;border-top:1px solid #ddd;margin:0 7px 3px;}
+  #visits{font-weight:700;color:#000;}
 
-    .section-label {
-      font-family: Arial, sans-serif;
-      font-size: 11.5px;
-      font-weight: 900;
-      text-decoration: underline;
-      margin-bottom: 5px;
-    }
-
-    .about-wrap p {
-      font-size: 12.5px;
-      text-align: justify;
-      line-height: 1.55;
-    }
-
-
-    /* ─────────────────────────────────────────
-       3. BODY  (left col + right col)
-    ───────────────────────────────────────── */
-    .body-wrap {
-      margin: 8px 10px 10px 10px;
-      border: 1.5px solid #000;
-      display: flex;
-      align-items: stretch;
-    }
-
-    /* LEFT COLUMN */
-    .left {
-      width: 210px;
-      flex-shrink: 0;
-      border-right: 1.5px solid #000;
-      padding: 10px 10px 14px 10px;
-    }
-
-    .left .block {
-      margin-bottom: 11px;
-    }
-    .left .block:last-child {
-      margin-bottom: 0;
-    }
-
-    /* bullet lists in left col */
-    .left ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .left ul li::before {
-      content: "• ";
-    }
-
-    /* Frameworks: two items per row with bullet separator
-       e.g.  • PyTorch   • Linux   */
-    .fw-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      font-size: 11.5px;
-      line-height: 1.75;
-      list-style: none;
-      padding: 0;
-    }
-
-    .fw-grid li::before {
-      content: "• ";
-    }
-
-    /* AWS entry spans full width */
-    .fw-grid .full {
-      grid-column: 1 / -1;
-    }
-
-    /* Education entries */
-    .edu {
-      font-size: 11.5px;
-      line-height: 1.55;
-      margin-bottom: 7px;
-    }
-    .edu:last-child { margin-bottom: 0; }
-
-
-    /* RIGHT COLUMN */
-    .right {
-      flex: 1;
-      padding: 10px 12px 14px 12px;
-    }
-
-    /* project blocks */
-    .project {
-      margin-bottom: 12px;
-    }
-    .project:last-child { margin-bottom: 0; }
-
-    .project-title {
-      font-family: Arial, sans-serif;
-      font-size: 12.5px;
-      font-weight: 900;
-      line-height: 1.45;
-      margin-bottom: 4px;
-    }
-
-    .project ul {
-      list-style: none;
-      padding: 0;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    .project ul li {
-      padding-left: 16px;
-      position: relative;
-      margin-bottom: 3px;
-    }
-
-    .project ul li::before {
-      content: "•";
-      position: absolute;
-      left: 4px;
-    }
-
-    .project ul li a {
-      color: #000;
-      text-decoration: underline;
-    }
-
-
-    /* ─────────────────────────────────────────
-       4. VISITOR COUNTER  (outside the page box)
-    ───────────────────────────────────────── */
-    .counter {
-      text-align: center;
-      padding: 6px 10px 8px;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      color: #444;
-      border-top: 1px solid #ddd;
-      margin: 0 10px 10px;
-    }
-
-    #visits {
-      font-weight: 700;
-      color: #000;
-    }
-
-  </style>
+  @page{size:A4;margin:0;}
+  @media print{
+    body{background:#fff;padding:0;display:block;}
+    .page{box-shadow:none;}
+  }
+</style>
 </head>
 <body>
 <div class="page">
+<div class="sheet">
+  <div class="bar"></div>
 
-  <!-- ══ HEADER ══════════════════════════════════ -->
-  <div class="header">
-    <div class="header-left">
+  <div class="sec hdr">
+    <div>
       <h1>NEEL BOSE</h1>
-      <div class="tagline">A I &nbsp; E N G I N E E R &nbsp; | &nbsp; C L O U D &nbsp; &amp; &nbsp; W E B &nbsp; D E V E L O P E R</div>
+      <div class="tagline">AI CLOUD ENGINEER</div>
     </div>
-    <div class="header-right">
-      neelbosen.jr11@gmail.com &nbsp;<br>&nbsp; +91 8697589964<br>
-      GitHub: <a href="https://github.com/Nj-1111">github.com/Nj-1111</a><br>
-      Hugging Face: <a href="https://huggingface.co/Nj-1111">huggingface.co/Nj-1111</a><br>
-      LinkedIn: <a href="https://www.linkedin.com/in/neel-bose-545bb921a/">linkedin.com/in/neel-bose-545bb921a</a>
+    <div class="contact">
+      Kolkata-700091, India,<br>
+      +91 8697589964,<br>
+      neelbosen.jr21@gmail.com
     </div>
   </div>
 
-
-  <!-- ══ ABOUT ME ════════════════════════════════ -->
-  <div class="about-wrap">
-    <div class="section-label">ABOUT ME</div>
-    <p>
-      Pre-Final Year Engineering student passionate about building practical AI systems, scalable cloud
-      applications, and intelligent software that solves real-world problems. Hands-on experience developing
-      healthcare AI pipelines, transformer models, tokenizer systems, and embedded monitoring solutions
-      using Python, PyTorch, FastAPI, and cloud deployment tools. Interested in machine learning
-      engineering, backend systems, and product-focused development with a strong focus on learning by
-      building.
-    </p>
+  <div class="sec links center">
+    GitHub: <a href="https://github.com/Nj-1111">github.com/Nj-1111</a>, Hugging Face:
+    <a href="https://huggingface.co/Nj-1111">huggingface.co/Nj-1111</a>, Medium:
+    <a href="https://medium.com/@neelbosen.jr21">medium.com/@neelbosen.jr21</a>,<br>
+    LinkedIn: <a href="https://www.linkedin.com/in/neel-bose-545bb921a/">www.linkedin.com/in/neel-bose-545bb921a/</a>
+    &nbsp;&nbsp;&nbsp;Portfolio:
   </div>
 
+  <div class="sec summary center">
+    Final year engineer architecting cost-optimized ML workloads and highly available, multi-region
+    infrastructure on AWS. Learning by breaking systems, then rebuilding them with decoupled
+    architecture and pipelines.
+  </div>
 
-  <!-- ══ BODY COLUMNS ════════════════════════════ -->
-  <div class="body-wrap">
+  <div class="sec certs">
+    <h2>Certifications :</h2>
+    <ul>
+      <li>AWS Certified Cloud Practitioner &nbsp;- Credential ID : <a class="plain" href="https://www.credly.com/badges/3e7de11a-6d3c-4657-842e-187f3ec9c1bf/public_url">3e7de11a-6d3c-4657-842e-187f3ec9c1bf</a></li>
+      <li>AWS Certified AI Practitioner &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp; Credential ID : <a class="plain" href="https://www.credly.com/badges/9f2fe0f7-839b-43fe-b060-8395aa982014/public_url">9f2fe0f7-839b-43fe-b060-8395aa982014</a></li>
+    </ul>
+    <div class="skills"><b>Skills :</b> &nbsp;Python, Terraform, AWS, Docker , Linux ,Networking, &nbsp;ECS/EKS, LangGraph, langchain, MySql.</div>
+  </div>
 
-    <!-- LEFT ─────────────────────────────────── -->
-    <div class="left">
+  <div class="sec work">
+    <h2>Work Experience:</h2>
+    <div class="job"><span class="when">August 2026 - Present</span><b>Workmates Core2Cloud</b>, Kolkata, India.</div>
+    <div class="role">AWS Cloud Engineer Intern</div>
+    <ul>
+      <li>Architechted a serverless bulk email AWS native solution (SES, Lambda, SNS, SQS, DynamoDB) with
+        automated per-recipient delivery/bounce tracking; owned the tracking pipeline and cost/latency modeling
+        at 40K-400K-recipient scale.</li>
+      <li>Deployed and hardened a Windows Server Active Directory environment on AWS EC2 - promoted a
+        Domain Controller, built an OU/GPO/security-group structure with Kerberos authentication and
+        CloudWatch/SNS monitoring, and recovered a live RDP lockout via EC2 User Data boot-script injection.</li>
+    </ul>
+  </div>
 
-      <div class="block">
-        <div class="section-label">SKILLS</div>
-        <ul>
-          <li>AI / Machine Learning</li>
-          <li>Domain specific SLM training &amp; Integration</li>
-          <li>Chatbots Integration And Evaluation with RAGs</li>
-          <li>CNN &amp; Transformer Architectures.</li>
-          <li>Image and Data Processing</li>
-          <li>Model Training &amp; Inference</li>
-        </ul>
-      </div>
+  <div class="sec proj">
+    <h2>Project Experience:</h2>
 
-      <div class="block">
-        <div class="section-label">FRAMEWORKS &amp; LIBRARIES</div>
-        <ul class="fw-grid">
-          <li>PyTorch</li>
-          <li>NumPy</li>         
-          <li>Pandas</li>
-          <li>Matplot-lib</li>
-          <li>OpenCV</li>
-          <li>SQL,NoSQL</li>
-          <li>LangGraph</li>
-          <li>LangChain</li>
-          <li>Docker</li>
-          <li>Linux</li>
-          <li>Networking</li>
-          <li>DynamoDB</li>
-          <li>Amazon Web Services(AWS)- EC2,S3,Lambda, RDS,IAM,CloudWatch.</li>
-          <li>FastAPI</li>
-        </ul>
-      </div>
+    <div class="p">
+      <div class="ptitle">GPT-152M - Decoder-Only Transformer Trained from ScratchPyTorch &middot; Transformers</div>
+      <ul>
+        <li>Trained 152M-parameter GPT-style LM from scratch in raw PyTorch (RoPE, SwiGLU, gradient
+          checkpointing) on 197M tokens over 6,000 steps on Kaggle T4 GPUs.</li>
+      </ul>
+      <div class="meta">Repo: Nj- 1111/gpt-152m-fineweb &nbsp;&nbsp;&nbsp;&nbsp;Live:
+        <a href="https://huggingface.co/spaces/Nj-1111/gpt-152m-demo">huggingface.co/spaces/Nj-1111/gpt-152m-demo</a></div>
+    </div>
 
-      <div class="block">
-        <div class="section-label">SOFT SKILLS</div>
-        <ul>
-          <li>Problem Solving</li>
-          <li>Team Collaboration</li>
-          <li>Debugging &amp; Troubleshooting</li>
-          <li>Time Management</li>
-        </ul>
-      </div>
+    <div class="p">
+      <div class="ptitle">Multi Region,Multi-Account AWS Infrastructure -HIgh Availability, Peering, and Data Recovery</div>
+      <ul>
+        <li>Re-architected manual EC2 tiers into self-configuring infrastructure (Launch Templates + Auto
+          Scaling Groups, 2/2/2 capacity) across 2 target groups and a load balancer, a system that
+          automatically spin up, health-check, and replace instances without manual setup.</li>
+        <li>Extended cross-region (ap-southeast-2 and us-east-1) via VPC peering with weighted ALB routing
+          and a shared RDS backend.</li>
+      </ul>
+    </div>
 
-      <div class="block">
-        <div class="section-label">EDUCATION</div>
-        <div class="edu">
-          B.Tech in Electronic and Communication Engineering.
-          RCC Institute of Information Technology — Kolkata, West Bengal [2023 – 2027]
-        </div>
-        <div class="edu">
-          Higher Secondary Education (Class XII). Shikshaniketan School — CBSE [2023].
-        </div>
-        <div class="edu">
-          Secondary Education (Class X). Sri Aurobindo Institute Of Education — ICSE [2021].
-        </div>
-      </div>
+    <div class="p">
+      <div class="ptitle">Terraform-VPC - Modular AWS Networking as Code</div>
+      <ul>
+        <li>Built a reusable, modular Terraform stack that provisions a full AWS VPC with one config change &mdash;
+          configurable HA, secure remote state.</li>
+      </ul>
+      <div class="meta">Repo: github.com/Nj-1111/Terraform-VPC</div>
+    </div>
 
-    </div><!-- /left -->
+    <div class="p">
+      <div class="ptitle">Copernicus Tokenizer &mdash; 56K-Vocab BPE Tokenizer</div>
+      <ul>
+        <li>Trained a 56K-vocab BPE tokenizer from scratch on 3.96M documents (language, code, math,
+          science) via a crash-resilient 4-stage pipeline with a custom pure-Python implementation.</li>
+      </ul>
+      <div class="meta">Repo: huggingface.co/Nj-1111/Copernicus-Tokenizer</div>
+    </div>
+  </div>
 
+  <div class="sec edu">
+    <h2>Education:</h2>
+    <ul>
+      <li>B.Tech in Eelctronic and Communication Engineering. RCC Institute of Information Technology - Kolkata [2023 &ndash; 2027]</li>
+      <li>Higher Secondary Education (Class XII) . Shikshaniketan School - CBSE [2023].</li>
+      <li>Secondary Education (Class X).Sri Aurobindo Institute Of Education - ICSE [2021].</li>
+    </ul>
+    <div class="lang"><b>Languages:</b> &nbsp;&nbsp;English (Fluent), Hindi(Native), Bengali (Native), German (A1-Beginner)</div>
+  </div>
 
-    <!-- RIGHT ────────────────────────────────── -->
-    <div class="right">
-
-      <div class="section-label">PROJECT EXPERIENCE</div>
-
-      <div class="project">
-        <div class="project-title">Copernicus Byte Level Byte Pair EncodeTokenizer | Python</div>
-        <ul>
-          <li>Built and trained a 56K-vocabulary domain-general BPE tokenizer from scratch on 3.96M documents spanning natural language, code, mathematics, and scientific text. Engineered a crash-resilient 4-stage training pipeline on Kaggle with custom pure-Python BPE implementation, checkpoint recovery, and large-scale dataset preprocessing; published on Hugging Face</li>
-          <li>Repository : <a href="https://huggingface.co/Nj-1111/Copernicus-Tokenizer" target="_blank">Nj-1111/Copernicus-Tokenizer</a></li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <div class="project-title">EyeeSEE – Glaucoma Clinical Decision Support System | PyTorch, U-Net</div>
-        <ul>
-          <li>End-to-end glaucoma screening pipeline using U-Net segmentation with Monte Carlo Dropout uncertainty estimation and deterministic clinical metric extraction (vCDR, ISNT rule) from retinal fundus images.</li>
-          <li>Repository: <a href="https://github.com/Nj-1111/EyeeSEE" target="_blank">Nj-1111/EyeeSEE</a></li>
-          <li>Dataset: <a href="https://huggingface.co/datasets/Nj-1111/Glaucoma_Dataset" target="_blank">Nj-1111/Glaucoma_Dataset</a></li>
-          <li>Demo: <a href="https://huggingface.co/spaces/Nj-1111/EyeeSEE" target="_blank">Nj-1111/EyeeSEE (Spaces)</a></li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <div class="project-title">GPT-152M — Decoder-Only Transformer Trained from Scratch | PyTorch, Transformers, NLP</div>
-        <ul>
-          <li>Built and trained a 152M-parameter GPT-style transformer Language Model from scratch in raw PyTorch on the FineWebEdu corpus, implementing RoPE, SwiGLU, weight tying, and gradient checkpointing. Designed a full mixed-precision training pipeline on Kaggle Tesla T4 GPUs using AdamW, cosine LR scheduling, and gradient accumulation, training on 197M tokens over 6,000 optimization steps.</li>
-          <li>Repository: <a href="https://github.com/Nj-1111/gpt-152m-fineweb" target="_blank">Nj-1111/gpt-152m-fineweb</a></li>
-          <li>Demo: <a href="https://huggingface.co/spaces/Nj-1111/gpt-152m-demo" target="_blank">Nj-1111/gpt-152m-demo (Spaces)</a></li>
-        </ul>
-      </div>
-      <div class="project">
-
-      <div class="project-title">Cloud Resume Challenge — Serverless Resume on AWS | AWS, Python, CI/CD</div>
-        <ul>
-          <li>Designed and deployed a fully serverless personal resume website on AWS using S3 for static hosting, CloudFront for HTTPS and global CDN delivery, and Route 53–ready architecture. Built a visitor counter backend with AWS Lambda (Python), API Gateway, and DynamoDB, implementing CORS preflight handling and atomic counter updates via UpdateExpression.</li>
-          <li>Provisioned all infrastructure as code using AWS SAM (CloudFormation) and automated deployments with GitHub Actions CI/CD pipelines — push-to-deploy with pytest unit tests, SAM build/deploy for backend, and S3 sync plus CloudFront invalidation for frontend.</li>
-          <li>Live Site: <a href="https://dajtidw1llzd9.cloudfront.net" target="_blank">dajtidw1llzd9.cloudfront.net</a></li>
-          <li>Frontend Repo: <a href="https://github.com/Nj-1111/resume-frontend" target="_blank">Nj-1111/resume-frontend</a></li>
-          <li>Backend Repo: <a href="https://github.com/Nj-1111/resume-backend" target="_blank">Nj-1111/resume-backend</a></li>
-        </ul>
-      </div>
-
-    </div><!-- /right -->
-  </div><!-- /body-wrap -->
-
-  <!-- ══ VISITOR COUNTER ══════════════════════════ -->
   <div class="counter">
-    👁 Visitor count: <span id="visits">—</span>
+    &#128065; Visitor count: <span id="visits">&mdash;</span>
   </div>
-
-</div><!-- /page -->
+</div><!-- /sheet -->
+</div>
 
 <script>
-  /*
-   * VISITOR COUNTER
-   * ───────────────
-   * After you deploy the backend (SAM), paste your API Gateway URL below.
-   * The script POSTs to your Lambda, which increments DynamoDB and returns { count: N }.
-   */
-  const API_URL = "https://uf7f1ay6me.execute-api.ap-south-1.amazonaws.com/Prod/count";  // ← replace this
+  const API_URL = "https://uf7f1ay6me.execute-api.ap-south-1.amazonaws.com/Prod/count";
 
   async function loadCount() {
     try {
@@ -406,6 +229,5 @@
 
   loadCount();
 </script>
-
 </body>
 </html>
